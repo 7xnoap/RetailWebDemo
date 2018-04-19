@@ -9,8 +9,8 @@ if (window.DeviceMotionEvent) {
         var acc = event.accelerationIncludingGravity || {};
         // var rr = event.rotationRate || {};
         var str = 'devicemotion:<br>';
-        // str += 'acc x:' + acc.x + '<br>';
-        // str += 'acc y:' + acc.y + '<br>';
+        str += 'acc x:' + acc.x + '<br>';
+        str += 'acc y:' + acc.y + '<br>';
         // str += 'acc z:' + acc.z + '<br>';
         // str += 'rr alpha:' + rr.alpha + '<br>';
         // str += 'rr beta:' + rr.beta + '<br>';
