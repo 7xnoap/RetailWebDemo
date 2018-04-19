@@ -1,12 +1,12 @@
 
 if (window.DeviceMotionEvent) {
-    alert('support DeviceMotionEvent');
     var index = 0;
     window.addEventListener('devicemotion', function (event) {
-        // if (index++ <= 10) {
-        //     return;
-        // }
-        // index = 0;
+        if (index++ <= 100) {
+            return;
+        }
+        index = 0;
+        alert(event);
         // var acc = event.accelerationIncludingGravity || {};
         // var rr = event.rotationRate || {};
         // var str = 'devicemotion:<br>';
@@ -17,8 +17,8 @@ if (window.DeviceMotionEvent) {
         // str += 'rr beta:' + rr.beta + '<br>';
         // str += 'rr gamma:' + rr.gamma + '<br>';
         // str += 'interval:' + event.interval + '<br>';
-        $('.motion-info').html(event);
-    }, false);
+        // $('.motion-info').html(event);
+    }, true);
 }
 else {
     $('.motion-info').html('DO NOT support DeviceMotionEvent');
