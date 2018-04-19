@@ -8,13 +8,11 @@ if (window.DeviceMotionEvent) {
         index = 0;
         var str = '';
         for (var key in event) {
-            if (event.hasOwnProperty(key)) {
-                str += key + ':' + event[key];
-                str += '<br>';
-            }
+            str += key + ':' + event[key];
+            str += '<br>';
         }
         $('.motion-info').html(str);
-    }, false);
+    });
 }
 else {
     $('.motion-info').html('DO NOT support DeviceMotionEvent');
@@ -29,10 +27,8 @@ if (window.DeviceOrientationEvent) {
         index = 0;
         var str = '';
         for (var key in event) {
-            if (event.hasOwnProperty(key)) {
-                str += key + ':' + event[key];
-                str += '<br>';
-            }
+            str += key + ':' + event[key];
+            str += '<br>';
         }
         $('.orientation-info').html(str);
     });
