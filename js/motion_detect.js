@@ -13,8 +13,9 @@ if (window.DeviceMotionEvent) {
         var acceleration = event.accelerationIncludingGravity;
         x = acceleration.x;
         y = acceleration.y;
-        $('.motion-info').html('x:' + x + '<br>'
-                            + 'y:' + y);
+        // $('.motion-info').html('x:' + x + '<br>'
+        //                     + 'y:' + y);
+        $('.motion-info').html(event);
         // if(Math.abs(x-lastX) > speed || Math.abs(y-lastY) > speed) {
             // 用户设备摇动了，触发响应操作
             // 此处的判断依据是用户设备的加速度大于我们设置的阈值
@@ -25,7 +26,7 @@ if (window.DeviceMotionEvent) {
     }, false);
 }
 else {
-    $('.rwd-page-info').html('DO NOT support DeviceMotionEvent');
+    $('.motion-info').html('DO NOT support DeviceMotionEvent');
 }
 
 if (window.DeviceOrientationEvent) {
@@ -37,5 +38,5 @@ if (window.DeviceOrientationEvent) {
     });
 }
 else {
-    $('.rwd-page-info').html('DO NOT support DeviceOrientationEvent');
+    $('.orientation-info').html('DO NOT support DeviceOrientationEvent');
 }
