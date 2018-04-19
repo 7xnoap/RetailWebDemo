@@ -24,9 +24,9 @@
 
 var RECORD_INTERVAL = 3;
 var POS_INTERVAL = 800; // ms
-var STILL_INTERVAL = 300; // ms
-var ALPHA_ANGLE = 35; // degree
-var BETA_ANGLE = 15; // degree
+var STILL_INTERVAL = 600; // ms
+var ALPHA_ANGLE = 40; // degree
+var BETA_ANGLE = 10; // degree
 
 var posQueue = [];
 var actionQueue = [];
