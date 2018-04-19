@@ -15,6 +15,7 @@ if (window.DeviceMotionEvent) {
         y = acceleration.y;
         // $('.motion-info').html('x:' + x + '<br>'
         //                     + 'y:' + y);
+        event = event.originalEvent;
         var str = '';
         for (var key in event) {
             if (event.hasOwnProperty(key)) {
@@ -38,6 +39,7 @@ else {
 
 if (window.DeviceOrientationEvent) {
     $(window).on('deviceorientation', function (event) {
+        event = event.originalEvent;
         var str = '';
         for (var key in event) {
             if (event.hasOwnProperty(key)) {
@@ -45,7 +47,6 @@ if (window.DeviceOrientationEvent) {
                 str += '<br>';
             }
         }
-        $('.motion-info').html(str);
         $('.orientation-info').html(str);
         // $('.orientation-info').html('alpha:' + event.alpha + '<br>'
         //                         + 'beta:' + event.beta + '<br>'
