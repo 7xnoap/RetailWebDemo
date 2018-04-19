@@ -18,7 +18,7 @@ if (window.DeviceMotionEvent) {
         var str = '';
         for (var key in event) {
             if (event.hasOwnProperty(key)) {
-                str += 'key:' + event[key];
+                str += key + ':' + event[key];
                 str += '<br>';
             }
         }
@@ -41,7 +41,7 @@ if (window.DeviceOrientationEvent) {
         var str = '';
         for (var key in event) {
             if (event.hasOwnProperty(key)) {
-                str += 'key:' + event[key];
+                str += key + ':' + event[key];
                 str += '<br>';
             }
         }
