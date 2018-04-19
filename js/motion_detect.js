@@ -137,6 +137,7 @@ if (window.DeviceOrientationEvent) {
             }
         }
 
+        $('.rwd-page-content').html('alpha:' + alphaAction.type + '  beta:' + betaAction.type);
         if (alphaAction.type && betaAction.type) {
             if (pos.time - firstPos.time >= POS_INTERVAL) {
                 posQueue.shift();
