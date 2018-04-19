@@ -30,9 +30,10 @@ else {
 
 if (window.DeviceOrientationEvent) {
     $(window).on('deviceorientation', function(event) {
-        $('.orientation-info').html('alpha:' + event.alpha + '<br>'
-                                + 'beta:' + event.beta + '<br>'
-                                + 'gamma:' + event.gamma);
+        $('.orientation-info').html(event);
+        // $('.orientation-info').html('alpha:' + event.alpha + '<br>'
+        //                         + 'beta:' + event.beta + '<br>'
+        //                         + 'gamma:' + event.gamma);
     });
 }
 else {
