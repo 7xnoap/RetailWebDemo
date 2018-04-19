@@ -6,16 +6,15 @@ if (window.DeviceMotionEvent) {
             return;
         }
         index = 0;
-        var acc = event.accelerationIncludingGravity || {};
+        var acc = event.acceleration || {};
         var rr = event.rotationRate || {};
         var str = 'devicemotion :<br>';
         str += 'acc x:' + acc.x + '<br>';
         str += 'acc y:' + acc.y + '<br>';
         str += 'acc z:' + acc.z + '<br>';
-        str += 'rr alpha:' + rr.alpha + '<br>';
-        str += 'rr beta:' + rr.beta + '<br>';
-        str += 'rr gamma:' + rr.gamma + '<br>';
-        str += 'interval:' + event.interval + '<br>';
+        // str += 'rr alpha:' + rr.alpha + '<br>';
+        // str += 'rr beta:' + rr.beta + '<br>';
+        // str += 'rr gamma:' + rr.gamma + '<br>';
         $('.motion-info').html(str);
     }, true);
 }
