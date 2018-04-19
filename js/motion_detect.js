@@ -21,12 +21,6 @@
 // else {
 //     $('.motion-info').html('DO NOT support DeviceMotionEvent');
 // }
-window.onerror = handleErr;
-
-function handleErr(msg, url, l)
-{
-    alert(msg + ' ' + url + ' ' + l);
-}
 
 var RECORD_INTERVAL = 3;
 var POS_INTERVAL = 300; // ms
@@ -195,14 +189,14 @@ if (window.DeviceOrientationEvent) {
         }
         else {
             setTimeout(function () {
-                $('.orientation-info').html('');
-            }, 2000);
+                $('.orientation-info').html('NO GESTURE');
+            }, 3000);
         }
     });
 
     function getGesture (queue) {
         if (!queue || !queue.length) {
-            return;
+            return '';
         }
         if (queue.length === 1) {
             var action = queue[0];
