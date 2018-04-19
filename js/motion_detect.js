@@ -2,20 +2,20 @@
 if (window.DeviceMotionEvent) {
     var index = 0;
     window.addEventListener('devicemotion', function (event) {
-        if (index++ <= 100) {
+        if (index++ <= 10) {
             return;
         }
         index = 0;
         var acc = event.accelerationIncludingGravity || {};
-        // var rr = event.rotationRate || {};
+        var rr = event.rotationRate || {};
         var str = 'devicemotion:<br>';
         str += 'acc x:' + acc.x + '<br>';
         str += 'acc y:' + acc.y + '<br>';
-        // str += 'acc z:' + acc.z + '<br>';
-        // str += 'rr alpha:' + rr.alpha + '<br>';
-        // str += 'rr beta:' + rr.beta + '<br>';
-        // str += 'rr gamma:' + rr.gamma + '<br>';
-        // str += 'interval:' + event.interval + '<br>';
+        str += 'acc z:' + acc.z + '<br>';
+        str += 'rr alpha:' + rr.alpha + '<br>';
+        str += 'rr beta:' + rr.beta + '<br>';
+        str += 'rr gamma:' + rr.gamma + '<br>';
+        str += 'interval:' + event.interval + '<br>';
         $('.motion-info').html(str);
     }, true);
 }
