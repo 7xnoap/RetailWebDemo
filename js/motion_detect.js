@@ -25,8 +25,8 @@
 var RECORD_INTERVAL = 3;
 var POS_INTERVAL = 800; // ms
 var STILL_INTERVAL = 300; // ms
-var ALPHA_ANGLE = 40; // degree
-var BETA_ANGLE = 40; // degree
+var ALPHA_ANGLE = 35; // degree
+var BETA_ANGLE = 15; // degree
 
 var posQueue = [];
 var actionQueue = [];
@@ -139,11 +139,12 @@ if (window.DeviceOrientationEvent) {
 
         $('.rwd-page-content').html('alpha:' + pos.alpha + '<br>beta:' + pos.beta
             + '<br>alphaAction:' + alphaAction.type + '<br>betaAction:' + betaAction.type);
-        if (alphaAction.type && betaAction.type) {
-            actionQueue = [];
-            posQueue = [];
-        }
-        else if (alphaAction.type) {
+        // if (alphaAction.type && betaAction.type) {
+        //     actionQueue = [];
+        //     posQueue = [];
+        // }
+        // else 
+        if (alphaAction.type) {
             var length = actionQueue.length;
             if (!length) {
                 actionQueue.push(alphaAction);
