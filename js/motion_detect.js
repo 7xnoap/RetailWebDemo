@@ -21,6 +21,13 @@
 // else {
 //     $('.motion-info').html('DO NOT support DeviceMotionEvent');
 // }
+window.onerror = handleErr;
+
+function handleErr(msg, url, l)
+{
+    alert(msg + ' ' + url + ' ' + l);
+}
+
 var RECORD_INTERVAL = 3;
 var POS_INTERVAL = 300; // ms
 var ACTION_INTERVAL = 1000; //ms
