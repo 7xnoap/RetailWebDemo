@@ -202,7 +202,7 @@ if (window.DeviceOrientationEvent) {
         }
         if (gesture) {
             alert(gesture);
-            $('.orientation-info').html(gesture);
+            // $('.orientation-info').html(gesture);
         }
         else {
             setTimeout(function () {
