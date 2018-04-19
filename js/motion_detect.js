@@ -143,7 +143,7 @@ if (window.DeviceOrientationEvent) {
             actionQueue = [];
             posQueue = [];
         }
-        else if (alphaAction.type || betaAction.type) {
+        else if (alphaAction.type) {
             var length = actionQueue.length;
             if (!length) {
                 actionQueue.push(alphaAction);
@@ -155,6 +155,22 @@ if (window.DeviceOrientationEvent) {
                 }
                 else {
                     actionQueue.push(alphaAction);
+                }
+            }
+            posQueue = [];
+        }
+        else if (betaAction.type) {
+            var length = actionQueue.length;
+            if (!length) {
+                actionQueue.push(betaAction);
+            }
+            else {
+                var lastAction = actionQueue[length - 1];
+                if (lastAction.type === betaAction.type) {
+                    lastAction.end = betaAction.end;
+                }
+                else {
+                    actionQueue.push(betaAction);
                 }
             }
             posQueue = [];
