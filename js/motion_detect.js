@@ -205,7 +205,7 @@ if (window.DeviceOrientationEvent) {
         }
         else {
             setTimeout(function () {
-                $('.orientation-info').html('NO GESTURE');
+                $('.orientation-info').html('');
             }, 2000);
         }
     });
