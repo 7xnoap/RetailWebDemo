@@ -190,7 +190,7 @@ if (window.DeviceOrientationEvent) {
         else {
             setTimeout(function () {
                 $('.orientation-info').html('NO GESTURE');
-            }, 3000);
+            }, 2000);
         }
     });
 
