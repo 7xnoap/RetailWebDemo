@@ -15,7 +15,7 @@ if (window.DeviceMotionEvent) {
         y = acceleration.y;
         // $('.motion-info').html('x:' + x + '<br>'
         //                     + 'y:' + y);
-        $('.motion-info').html(event);
+        $('.motion-info').html(JSON.stringify(event));
         // if(Math.abs(x-lastX) > speed || Math.abs(y-lastY) > speed) {
             // 用户设备摇动了，触发响应操作
             // 此处的判断依据是用户设备的加速度大于我们设置的阈值
@@ -31,7 +31,7 @@ else {
 
 if (window.DeviceOrientationEvent) {
     $(window).on('deviceorientation', function(event) {
-        $('.orientation-info').html(event);
+        $('.orientation-info').html(JSON.stringify(event));
         // $('.orientation-info').html('alpha:' + event.alpha + '<br>'
         //                         + 'beta:' + event.beta + '<br>'
         //                         + 'gamma:' + event.gamma);
