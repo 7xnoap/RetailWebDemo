@@ -6,8 +6,8 @@ if (window.DeviceMotionEvent) {
             return;
         }
         index = 0;
-        var acc = event.accelerationIncludingGravity;
-        var rr = event.rotationRate;
+        var acc = event.accelerationIncludingGravity || {};
+        var rr = event.rotationRate || {};
         var str = 'devicemotion:<br>';
         str += 'acc x:' + acc.x + '<br>';
         str += 'acc y:' + acc.y + '<br>';
