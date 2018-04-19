@@ -23,9 +23,9 @@
 // }
 
 var RECORD_INTERVAL = 3;
-var POS_INTERVAL = 300; // ms
+var POS_INTERVAL = 500; // ms
 var ACTION_INTERVAL = 1000; //ms
-var STILL_INTERVAL = 150; // ms
+var STILL_INTERVAL = 300; // ms
 var ALPHA_ANGLE = 30; // degree
 var BETA_ANGLE = 20; // degree
 
