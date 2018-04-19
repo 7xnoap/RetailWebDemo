@@ -144,8 +144,8 @@ if (window.DeviceOrientationEvent) {
             }
         }
 
-        $('.rwd-page-content').html('alpha:' + pos.alpha + ' beta:' + pos.beta
-            + 'alphaAction:' + alphaAction.type + '  betaAction:' + betaAction.type);
+        $('.rwd-page-content').html('alpha:' + pos.alpha + '<br>beta:' + pos.beta
+            + '<br>alphaAction:' + alphaAction.type + '<br>betaAction:' + betaAction.type);
         if (alphaAction.type && betaAction.type) {
             if (pos.time - firstPos.time >= POS_INTERVAL) {
                 posQueue.shift();
@@ -197,7 +197,7 @@ if (window.DeviceOrientationEvent) {
         else {
             setTimeout(function () {
                 $('.orientation-info').html('');
-            }, 500);
+            }, 2000);
         }
     });
 
