@@ -17,7 +17,7 @@ if (window.DeviceMotionEvent) {
         str += 'rr gamma:' + rr.gamma + '<br>';
         str += 'interval:' + event.interval + '<br>';
         $('.motion-info').html(str);
-    });
+    }, false);
 }
 else {
     $('.motion-info').html('DO NOT support DeviceMotionEvent');
@@ -36,7 +36,7 @@ if (window.DeviceOrientationEvent) {
         str += 'beta:' + event.beta + '<br>';
         str += 'gamma:' + event.gamma + '<br>';
         $('.orientation-info').html(str);
-    });
+    }, false);
 }
 else {
     $('.orientation-info').html('DO NOT support DeviceOrientationEvent');
