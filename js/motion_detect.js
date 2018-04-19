@@ -6,10 +6,9 @@ if (window.DeviceMotionEvent) {
             return;
         }
         index = 0;
-        alert(event);
-        // var acc = event.accelerationIncludingGravity || {};
+        var acc = event.accelerationIncludingGravity || {};
         // var rr = event.rotationRate || {};
-        // var str = 'devicemotion:<br>';
+        var str = 'devicemotion:<br>';
         // str += 'acc x:' + acc.x + '<br>';
         // str += 'acc y:' + acc.y + '<br>';
         // str += 'acc z:' + acc.z + '<br>';
@@ -17,7 +16,7 @@ if (window.DeviceMotionEvent) {
         // str += 'rr beta:' + rr.beta + '<br>';
         // str += 'rr gamma:' + rr.gamma + '<br>';
         // str += 'interval:' + event.interval + '<br>';
-        // $('.motion-info').html(event);
+        $('.motion-info').html(str);
     }, true);
 }
 else {
