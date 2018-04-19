@@ -147,10 +147,8 @@ if (window.DeviceOrientationEvent) {
         $('.rwd-page-content').html('alpha:' + pos.alpha + '<br>beta:' + pos.beta
             + '<br>alphaAction:' + alphaAction.type + '<br>betaAction:' + betaAction.type);
         if (alphaAction.type && betaAction.type) {
-            if (pos.time - firstPos.time >= POS_INTERVAL) {
-                posQueue.shift();
-            }
-            posQueue.push(pos);
+            actionQueue = [];
+            posQueue = [];
         }
         else if (alphaAction.type || betaAction.type) {
             var length = actionQueue.length;
@@ -166,6 +164,7 @@ if (window.DeviceOrientationEvent) {
                     actionQueue.push(alphaAction);
                 }
             }
+            posQueue = [];
         }
         else {
             var length = actionQueue.length;
