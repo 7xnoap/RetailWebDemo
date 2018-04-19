@@ -1,5 +1,6 @@
 
 if (window.DeviceMotionEvent) {
+    alert('support DeviceMotionEvent');
     var index = 0;
     window.addEventListener('devicemotion', function (event) {
         if (index++ <= 10) {
@@ -8,7 +9,7 @@ if (window.DeviceMotionEvent) {
         index = 0;
         // var acc = event.accelerationIncludingGravity || {};
         // var rr = event.rotationRate || {};
-        var str = 'devicemotion:<br>';
+        // var str = 'devicemotion:<br>';
         // str += 'acc x:' + acc.x + '<br>';
         // str += 'acc y:' + acc.y + '<br>';
         // str += 'acc z:' + acc.z + '<br>';
@@ -16,7 +17,7 @@ if (window.DeviceMotionEvent) {
         // str += 'rr beta:' + rr.beta + '<br>';
         // str += 'rr gamma:' + rr.gamma + '<br>';
         // str += 'interval:' + event.interval + '<br>';
-        $('.motion-info').html(event.accelerationIncludingGravity);
+        $('.motion-info').html(event);
     }, false);
 }
 else {
