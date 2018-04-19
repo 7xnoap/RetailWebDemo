@@ -30,9 +30,9 @@ var BETA_ANGLE = 10; // degree
 
 var posQueue = [];
 var actionQueue = [];
+var index = 0;
 
 if (window.DeviceOrientationEvent) {
-    var index = 0;
     window.addEventListener('deviceorientation', function (event) {
         if (index++ <= RECORD_INTERVAL) {
             return;
