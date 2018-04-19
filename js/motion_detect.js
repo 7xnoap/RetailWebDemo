@@ -6,11 +6,16 @@ if (window.DeviceMotionEvent) {
             return;
         }
         index = 0;
-        var str = '';
-        for (var key in event) {
-            str += key + ':' + event[key];
-            str += '<br>';
-        }
+        var acc = event.accelerationIncludingGravity;
+        var rr = event.rotationRate;
+        var str = 'devicemotion:<br>';
+        str += 'acc x:' + acc.x + '<br>';
+        str += 'acc y:' + acc.y + '<br>';
+        str += 'acc z:' + acc.z + '<br>';
+        str += 'rr alpha:' + rr.alpha + '<br>';
+        str += 'rr beta:' + rr.beta + '<br>';
+        str += 'rr gamma:' + rr.gamma + '<br>';
+        str += 'interval:' + event.interval + '<br>';
         $('.motion-info').html(str);
     });
 }
@@ -25,11 +30,11 @@ if (window.DeviceOrientationEvent) {
             return;
         }
         index = 0;
-        var str = '';
-        for (var key in event) {
-            str += key + ':' + event[key];
-            str += '<br>';
-        }
+        var str = 'deviceorientation:<br>';
+        str += 'absolute:' + event.absolute + '<br>';
+        str += 'alpha:' + event.alpha + '<br>';
+        str += 'beta:' + event.beta + '<br>';
+        str += 'gamma:' + event.gamma + '<br>';
         $('.orientation-info').html(str);
     });
 }
