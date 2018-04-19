@@ -22,7 +22,7 @@
 //     $('.motion-info').html('DO NOT support DeviceMotionEvent');
 // }
 
-var RECORD_INTERVAL = 3;
+var RECORD_INTERVAL = 2;
 var POS_INTERVAL = 800; // ms
 var STILL_INTERVAL = 600; // ms
 var ALPHA_ANGLE = 40; // degree
