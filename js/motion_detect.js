@@ -1,7 +1,7 @@
 
 if (window.DeviceMotionEvent) {
     var index = 0;
-    window.addEventListener('devicemotion', function (event) {
+    $(window).on('devicemotion', function (event) {
         if (index++ <= 10) {
             return;
         }
@@ -20,7 +20,7 @@ else {
 
 if (window.DeviceOrientationEvent) {
     var index = 0;
-    window.addEventListener('deviceorientation', function (event) {
+    $(window).on('deviceorientation', function (event) {
         if (index++ <= 10) {
             return;
         }
