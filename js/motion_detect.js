@@ -93,13 +93,13 @@ if (window.DeviceOrientationEvent) {
                 }
         }
 
-        if (pos.alpha >= -180 && pos.alpha <= -150
-            && firstPos.alpha >= -180 && firstPos.alpha <= -150
-            || pos.alpha >= 0 && pos.alpha <= 180
-            && firstPos.alpha >= 0 && firstPos.alpha <= 180
-            || pos.alpha >= -30 && pos.alpha < 0
-            && firstPos.alpha >= -30 && firstPos.alpha < 0) {
-            var delta = pos.alpha - firstPos.alpha;
+        if (pos.beta >= -180 && pos.beta <= -150
+            && firstPos.beta >= -180 && firstPos.beta <= -150
+            || pos.beta >= 0 && pos.beta <= 180
+            && firstPos.beta >= 0 && firstPos.beta <= 180
+            || pos.beta >= -30 && pos.beta < 0
+            && firstPos.beta >= -30 && firstPos.beta < 0) {
+            var delta = pos.beta - firstPos.beta;
             if (delta >= BETA_ANGLE) {
                 betaAction.type = 'UP';
                 betaAction.start = firstPos.time;
@@ -111,45 +111,46 @@ if (window.DeviceOrientationEvent) {
                 betaAction.end = pos.time;
             }
         }
-        else if (pos.alpha >= -180 && pos.alpha <= -150
-            && firstPos.alpha >= 0 && firstPos.alpha <= 180) {
-            if (180 + pos.alpha + (180 - firstPos.alpha) >= BETA_ANGLE) {
+        else if (pos.beta >= -180 && pos.beta <= -150
+            && firstPos.beta >= 0 && firstPos.beta <= 180) {
+            if (180 + pos.beta + (180 - firstPos.beta) >= BETA_ANGLE) {
                 betaAction.type = 'UP';
                 betaAction.start = firstPos.time;
                 betaAction.end = pos.time;
             }
         }
-        else if (pos.alpha >= 0 && pos.alpha <= 180
-            && firstPos.alpha >= -180 && firstPos.alpha <= -150) {
-            if (180 + firstPos.alpha + (180 - pos.alpha) >= BETA_ANGLE) {
+        else if (pos.beta >= 0 && pos.beta <= 180
+            && firstPos.beta >= -180 && firstPos.beta <= -150) {
+            if (180 + firstPos.beta + (180 - pos.beta) >= BETA_ANGLE) {
                 betaAction.type = 'DOWN';
                 betaAction.start = firstPos.time;
                 betaAction.end = pos.time;
             }
         }
-        else if (pos.alpha >= -30 && pos.alpha < 0
-            && firstPos.alpha >= 0 && firstPos.alpha <= 180) {
-            if (firstPos.alpha - pos.alpha >= BETA_ANGLE) {
+        else if (pos.beta >= -30 && pos.beta < 0
+            && firstPos.beta >= 0 && firstPos.beta <= 180) {
+            if (firstPos.beta - pos.beta >= BETA_ANGLE) {
                 betaAction.type = 'DOWN';
                 betaAction.start = firstPos.time;
                 betaAction.end = pos.time;
             }
         }
-        else if (pos.alpha >= 0 && pos.alpha <= 180
-            && firstPos.alpha >= -30 && firstPos.alpha < 0) {
-            if (pos.alpha - firstPos.alpha >= BETA_ANGLE) {
+        else if (pos.beta >= 0 && pos.beta <= 180
+            && firstPos.beta >= -30 && firstPos.beta < 0) {
+            if (pos.beta - firstPos.beta >= BETA_ANGLE) {
                 betaAction.type = 'UP';
                 betaAction.start = firstPos.time;
                 betaAction.end = pos.time;
             }
         }
 
-        $('.rwd-page-content').html('alpha:' + alphaAction.type + '  beta:' + betaAction.type);
+        $('.rwd-page-content').html('alpha:' + pos.alpha + ' beta:' + pos.beta
+            + 'alphaAction:' + alphaAction.type + '  betaAction:' + betaAction.type);
         if (alphaAction.type && betaAction.type) {
             if (pos.time - firstPos.time >= POS_INTERVAL) {
                 posQueue.shift();
-                posQueue.push(pos);
             }
+            posQueue.push(pos);
         }
         else if (alphaAction.type || betaAction.type) {
             var length = actionQueue.length;
@@ -176,9 +177,17 @@ if (window.DeviceOrientationEvent) {
                     actionQueue = [];
                     posQueue = [];
                 }
+                else {
+                    if (pos.time - firstPos.time >= POS_INTERVAL) {
+                        posQueue.shift();
+                    }
+                    posQueue.push(pos);
+                }
             }
-            if (pos.time - firstPos.time >= POS_INTERVAL) {
-                posQueue.shift();
+            else {
+                if (pos.time - firstPos.time >= POS_INTERVAL) {
+                    posQueue.shift();
+                }
                 posQueue.push(pos);
             }
         }
