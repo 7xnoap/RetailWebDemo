@@ -10,6 +10,25 @@ $('.gw-card').click(function () {
     ele.addClass('selected');
 });
 
+$(window).on('gesture-detected', function (gesture) {
+    alert(gesture);
+    if (gesture === "LEFT SHAKE" || gesture === "LEFT SWIPE" ) {
+        prev();
+    }
+    else if (gesture === "RIGHT SHAKE" || gesture === "RIGHT SWIPE" ) {
+        next();
+    }
+    else if (gesture === "UP WAVE" || gesture === "UP" ) {
+
+    }
+    else if (gesture === "DOWN WAVE" || gesture === "DOWN" ) {
+
+    }
+    else if (gesture === "SHAKING") {
+        reload();
+    }
+});
+
 var curIndex = 1;
 
 function prev() {
