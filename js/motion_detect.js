@@ -172,7 +172,6 @@ if (window.DeviceOrientationEvent) {
         }
         if (gesture) {
             $(window).trigger('gesture-detected', gesture);
-            // $('.orientation-info').html(gesture);
         }
     });
 
