@@ -11,7 +11,6 @@ $('.gw-card').click(function () {
 });
 
 $(window).on('gesture-detected', function (event, gesture) {
-    // alert(gesture);
     if (gesture === "LEFT SHAKE" || gesture === "LEFT SWIPE" ) {
         prev();
     }

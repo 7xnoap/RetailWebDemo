@@ -11,7 +11,6 @@ $('.gw-card').click(function () {
 });
 
 $(window).on('gesture-detected', function (event, gesture) {
-    // alert(gesture);
     if (gesture === "LEFT SHAKE" || gesture === "LEFT SWIPE" ) {
         prev();
     }
@@ -39,7 +38,6 @@ function prev() {
         $('.gw-card').removeClass('selected');
         $('#card-' + curIndex).addClass('selected');
         var y = document.getElementById('card-' + curIndex).offsetTop - 30;
-        // var y = $('#card-' + curIndex).offset().top + $(window);
         if ($('#rwd-page-container').height() - y > $(window).height()) {
             myScroll.scrollTo(0, -y, 500, IScroll.utils.ease.quadratic);
         }
@@ -59,7 +57,6 @@ function next() {
         $('.gw-card').removeClass('selected');
         $('#card-' + curIndex).addClass('selected');
         var y = document.getElementById('card-' + curIndex).offsetTop - 30;
-        // var y = $('#card-' + curIndex).offset().top;
         if ($('#rwd-page-container').height() - y > $(window).height()) {
             myScroll.scrollTo(0, -y, 500, IScroll.utils.ease.quadratic);
         }
