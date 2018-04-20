@@ -17,21 +17,6 @@ html, body {
     overflow-y: scroll;
 }
 
-.loading {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    text-align: center;
-    z-index: -1;
-}
-
-.loading img {
-    width: 100px;
-    height: 100px;
-}
-
 .rwd-page-container {
 }
 
