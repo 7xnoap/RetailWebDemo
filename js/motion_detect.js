@@ -1,27 +1,4 @@
 
-// if (window.DeviceMotionEvent) {
-//     var index = 0;
-//     window.addEventListener('devicemotion', function (event) {
-//         if (index++ <= 10) {
-//             return;
-//         }
-//         index = 0;
-//         var acc = event.acceleration || {};
-//         var rr = event.rotationRate || {};
-//         var str = 'devicemotion :<br>';
-//         str += 'acc x:' + (Math.round(parseFloat(acc.x) * 100) / 100) + '<br>';
-//         str += 'acc y:' + (Math.round(parseFloat(acc.y) * 100) / 100) + '<br>';
-//         str += 'acc z:' + (Math.round(parseFloat(acc.z) * 100) / 100) + '<br>';
-        // str += 'rr alpha:' + rr.alpha + '<br>';
-        // str += 'rr beta:' + rr.beta + '<br>';
-        // str += 'rr gamma:' + rr.gamma + '<br>';
-//         $('.motion-info').html(str);
-//     }, true);
-// }
-// else {
-//     $('.motion-info').html('DO NOT support DeviceMotionEvent');
-// }
-
 var RECORD_INTERVAL = 2;
 var POS_INTERVAL = 800; // ms
 var STILL_INTERVAL = 500; // ms
@@ -137,13 +114,6 @@ if (window.DeviceOrientationEvent) {
             }
         }
 
-        // $('.rwd-page-content').html('alpha:' + pos.alpha + '<br>beta:' + pos.beta
-        //     + '<br>alphaAction:' + alphaAction.type + '<br>betaAction:' + betaAction.type);
-        // if (alphaAction.type && betaAction.type) {
-        //     actionQueue = [];
-        //     posQueue = [];
-        // }
-        // else 
         if (alphaAction.type) {
             var length = actionQueue.length;
             if (!length) {
@@ -201,13 +171,8 @@ if (window.DeviceOrientationEvent) {
             }
         }
         if (gesture) {
-            alert(gesture);
+            $(window).trigger('gesture-detected', gesture);
             // $('.orientation-info').html(gesture);
-        }
-        else {
-            setTimeout(function () {
-                $('.orientation-info').html('');
-            }, 2000);
         }
     });
 
