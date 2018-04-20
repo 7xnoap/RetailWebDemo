@@ -10,7 +10,7 @@ $('.gw-card').click(function () {
     ele.addClass('selected');
 });
 
-$(window).on('gesture-detected', function (gesture) {
+$(window).on('gesture-detected', function (event, gesture) {
     alert(gesture);
     if (gesture === "LEFT SHAKE" || gesture === "LEFT SWIPE" ) {
         prev();
