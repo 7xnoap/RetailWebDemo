@@ -137,8 +137,8 @@ if (window.DeviceOrientationEvent) {
             }
         }
 
-        $('.rwd-page-content').html('alpha:' + pos.alpha + '<br>beta:' + pos.beta
-            + '<br>alphaAction:' + alphaAction.type + '<br>betaAction:' + betaAction.type);
+        // $('.rwd-page-content').html('alpha:' + pos.alpha + '<br>beta:' + pos.beta
+        //     + '<br>alphaAction:' + alphaAction.type + '<br>betaAction:' + betaAction.type);
         // if (alphaAction.type && betaAction.type) {
         //     actionQueue = [];
         //     posQueue = [];
