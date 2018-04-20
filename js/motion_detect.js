@@ -218,7 +218,7 @@ if (window.DeviceOrientationEvent) {
                 && actionThree.type === 'LEFT'
                 || actionOne.type === 'RIGHT' && actionTwo.type == 'LEFT'
                 && actionThree.type === 'RIGHT') {
-                return 'SHAKING!';
+                return 'SHAKING';
             }
         }
         return '';

@@ -22,7 +22,7 @@ $(window).on('gesture-detected', function (event, gesture) {
         window.history.go(-1);
     }
     else if (gesture === "DOWN WAVE" || gesture === "DOWN" ) {
-        window.location.href = './landing_page.html';
+        window.location.href = 'http://htmlpreview.github.io/?https://github.com/7xnoap/RetailWebDemo/blob/master/landing_page.html';
     }
     else if (gesture === "SHAKING") {
         reload();
