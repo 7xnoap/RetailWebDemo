@@ -33,7 +33,7 @@ function prev() {
 }
 
 function next() {
-    if (curIndex === 7) {
+    if (curIndex === 8) {
         return;
     }
     else {
