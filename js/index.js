@@ -10,7 +10,7 @@ $('.gw-card').click(function () {
     ele.addClass('selected');
 });
 
-$(window).on('gesture-detected', function (gesture) {
+$(window).on('gesture-detected', function (event, gesture) {
     alert(gesture);
     if (gesture === "LEFT SHAKE" || gesture === "LEFT SWIPE" ) {
         prev();
@@ -19,10 +19,10 @@ $(window).on('gesture-detected', function (gesture) {
         next();
     }
     else if (gesture === "UP WAVE" || gesture === "UP" ) {
-
+        window.history.go(-1);
     }
     else if (gesture === "DOWN WAVE" || gesture === "DOWN" ) {
-
+        window.location.href = './landing_page.html';
     }
     else if (gesture === "SHAKING") {
         reload();
