@@ -62,8 +62,8 @@ html, body {
 }
 
 .gw-card img {
-    width: 180px;
-    height: 180px;
+    width: 90%;
+    height: auto;
 }
 
 .rwd-page-footer {
